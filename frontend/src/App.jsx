@@ -20,9 +20,13 @@ function App() {
         try {
           setLoading(true);
           setError(false);
-          const response = await axios.get("/api/products?search=" + search, {
-            signal: controller.signal,
-          });
+          const response = await axios.get(
+            "https://api-vercel-first-project.onrender.com/api/products?search=" +
+              search,
+            {
+              signal: controller.signal,
+            }
+          );
           console.log(response.data);
           setProducts(response.data);
           setLoading(false);
